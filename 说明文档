@@ -1,0 +1,14 @@
+第一题
+使用BeautifulSoup模块 从网页上抓取对应标签里面的内容
+想要的数据存在在div标签下的table中，所以首先找到包含table的div标签 div_one = soup.find('div', attrs={'id': 'nationTable'})
+在div 中找到table table_one = div_one.find('table', class_='VirusTable_1-1-310_38pQEh')等
+直到找到tr标签与td，每个tr标签中的td中的内容是我们所需要的
+但是疫区在td中的div下面的span标签，所以疫区还需要在筛选一次
+将每一行的数据存在一个临时列表中，再将临时列表添加到结果列表中
+最后使用csv模块将数据写入到AllTimeUpdate.csv文件中
+
+第二题
+先将字符串去空格后按照换行符切割
+将列表切片处理
+对后半段列表进行处理，处理完与地前半段列表合并
+使用dict(zip(keyname_lst, temp_1))得出最后结果
